@@ -144,6 +144,13 @@
 			<!-- Slick --><script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.8.0/slick.min.js"></script>
 		<!-- Dev -->
 			<script src="js/script.js"></script>
+		<!-- Page specific -->
+			<script>
+				$('.toggleable-tabs a').click(function (e) {
+					e.preventDefault();
+					$(this).tab('show');
+				});
+			</script>
 
 		<script src="http://localhost:35729/livereload.js"></script>
 	</body>
