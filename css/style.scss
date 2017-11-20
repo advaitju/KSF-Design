@@ -1,19 +1,144 @@
 // CONTENTS
-	// 0. SASS setup
-	// 1. Imports
-	// 2. Framework customisations
-	// 3. Site-wide / HTML elements
-	// 4. Blocks: BEM, OOCSS, DRY CSS
-	// 5. Page specific sections
-	// 6. Helper CSS style applicators
-	// 7. Media queries
-
 // 0. SASS setup
 // 1. Imports
-@import url('https://fonts.googleapis.com/css?family=Titillium+Web:300,300i,400,400i,600,600i,700');
 // 2. Framework customisations
 // 3. Site-wide / HTML elements
 // 4. Blocks: BEM, OOCSS, DRY CSS
 // 5. Page specific sections
 // 6. Helper CSS style applicators
+// 7. Media queries
+
+// 0. SASS setup
+$base-color: #005331;
+$base-color-hover-dark: #0a2218;
+$highlight-color: #ffd720;
+$highlight-color-hover-dark: #c0a31c;
+
+// 1. Imports
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web:200,300,300i,400,400i,600,600i,700');
+
+// 2. Framework customisations
+.navbar.navbar-default {
+	background-color: transparent;
+	border: 0;
+	border-radius: 0;
+	font-family: "Titillium Web";
+	font-weight: 700;
+	font-size: 16px;
+	& .navbar-nav > li > a {
+		color: #333 !important;
+	}
+	& .navbar-nav > li.active > a {
+		border-bottom: 2px solid #ccc;
+		color: $base-color !important;
+		&:hover, &:focus {
+			color: $base-color-hover-dark;
+		}
+	}
+}
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
+	background-color: transparent;
+}
+.navbar li.active {
+	&>a {
+		background-color: transparent !important;
+	}
+}
+
+// 3. Site-wide / HTML elements
+body {
+	color: #333;
+	font-family: "Titillium Web", sans-serif;
+}
+h1 {
+	font-weight: 200;
+	font-size: 32px;
+	margin-bottom: 20px;
+}
+a {
+	color: $base-color;
+	text-decoration: none !important;
+	&:hover, &:focus {
+		color: $base-color-hover-dark;
+	}
+	&.highlight-color {
+		color: $highlight-color;
+		&:hover, &:focus, &:active {
+			color: $highlight-color-hover-dark;
+		}
+	}
+}
+
+// 4. Blocks: BEM, OOCSS, DRY CSS
+// 5. Page specific sections
+// 6. Helper CSS style applicators
+// 7. Media queries
+.site-wide-banner {
+	background-color: $base-color;
+	padding: 10px;
+	color: #fff;
+	text-align: center;
+	font-weight: 700;
+	font-size: 18px;
+	i {
+		margin-left: 5px;
+		margin-right: 5px;
+	}
+	p {
+		margin: 0;
+	}
+}
+.contact-links {
+	font-weight: 700;
+	font-size: 18px;
+	i {
+		margin-right: 10px;
+	}
+	.telephone {
+		margin-right: 20px;
+	}
+}
+.toggleable-tabs .nav {
+	font-weight: 600;
+	&.nav-pills {
+		border-radius: 4px;
+		& > li {
+			margin: 0;
+			& > a {
+				border-left: 1px solid $base-color;
+				border-right: 1px solid $base-color;
+			}
+			&:first-child {
+				& > a {
+					border-top: 1px solid $base-color;
+				}
+				& > a {
+					border-radius: 4px 4px 0 0;
+				}
+			}
+			&:last-child {
+				& > a {
+					border-bottom: 1px solid $base-color;
+				}
+				& > a {
+					border-radius: 0 0 4px 4px;
+				}
+			}
+			& > a {
+				border-radius: 0;
+			}
+		}
+		& > li.active {
+			& > a, & > a:hover, & > a:active {
+				background-color: $base-color;
+			}
+		}
+	}
+}
+
+// 5. Page specific sections
+// 6. Helper CSS style applicators
+.highlight-color {
+	color: $highlight-color;
+}
 // 7. Media queries
