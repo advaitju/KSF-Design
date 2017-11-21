@@ -11,7 +11,8 @@
 // 0. SASS setup
 $base-color: #005331;
 $base-color-hover-dark: #0a2218;
-$highlight-color: #ffd720;
+$highlight-color: #efc819;
+$highlight-color-dark: #806d14;
 $highlight-color-hover-dark: #c0a31c;
 
 // 1. Imports
@@ -29,7 +30,9 @@ $highlight-color-hover-dark: #c0a31c;
 		color: #333 !important;
 	}
 	& .navbar-nav > li.active > a {
-		border-bottom: 2px solid #ccc;
+		@media (min-width: 768px) {
+			border-bottom: 2px solid #ccc;
+		}
 		color: $base-color !important;
 		&:hover, &:focus {
 			color: $base-color-hover-dark;
@@ -44,11 +47,27 @@ $highlight-color-hover-dark: #c0a31c;
 		background-color: transparent !important;
 	}
 }
+.navbar-brand {
+	height: auto;
+	width: 220px;
+	padding-top: 25px;
+	@media (min-width: 768px) {
+		margin-left: 20px !important;
+	}
+}
+.navbar-nav > li > a {
+	padding-top: 37px;
+}
+.navbar-toggle {
+	margin-top: 32px;
+}
 
 // 3. Site-wide / HTML elements
 body {
 	color: #333;
 	font-family: "Titillium Web", sans-serif;
+	background-image: url(../img/concrete-texture.png);
+	background-repeat: repeat;
 }
 h1 {
 	font-weight: 200;
@@ -73,6 +92,9 @@ a {
 // 5. Page specific sections
 // 6. Helper CSS style applicators
 // 7. Media queries
+.nav-logo {
+	max-width: 100%;
+}
 .site-wide-banner {
 	background-color: $base-color;
 	padding: 10px;
@@ -88,9 +110,69 @@ a {
 		margin: 0;
 	}
 }
+.featured-products-slider-wrapper {
+	@media (max-width: 768px) {
+		max-width: 85%;
+		margin: 0 auto;
+	}
+	.featured-products-slider {
+		border-radius: 10px;
+		box-shadow: 0 0 60px 0px rgba(0,0,0,0.3);
+		.slick-prev:before {
+			content: '\2039';
+		}
+		.slick-next:before {
+			content: '\203A';
+		}
+		.slick-prev:before, .slick-next:before {
+			font-size: 70px;
+			color: #333;
+			line-height: 0;
+			vertical-align: middle;
+		}
+		.slick-prev {
+			left: -35px;
+		}
+		.slick-next {
+			right: -35px;
+		}
+		.slide {
+			// background-image: url(../img/samuel-zeller-15935.jpg);
+			background-size: cover;
+			background-position: center;
+			min-height: 280px;
+			padding: 45px 0 30px;
+			position: relative;
+			.product-title {
+				font-weight: 700;
+				font-size: 26px;
+			}
+			.product-description {
+				margin-bottom: 25px;
+			}
+			.product-image {
+				min-height: 200px;
+				float: right;
+				margin-top: 25px;
+			}
+			.shop-link {
+				text-transform: uppercase;
+				font-weight: 700;
+				font-size: 20px;
+				padding: 4px 50px;
+				color: #fff;
+			}
+			.overlay {
+				// background-color: transparentize($base-color, 0.7);
+				border-radius: 10px;
+			}
+		}
+	}
+}
 .contact-links {
 	font-weight: 700;
 	font-size: 18px;
+	margin: 45px 0 20px;
 	i {
 		margin-right: 10px;
 	}
@@ -137,8 +219,25 @@ a {
 }
 
 // 5. Page specific sections
+
 // 6. Helper CSS style applicators
 .highlight-color {
 	color: $highlight-color;
 }
+.highlighted-button {
+	background-color: $highlight-color;
+	box-shadow: 0 2px 0 0 $highlight-color-dark;
+	border: 0;
+	&:hover, &:active, &:focus {
+		background-color: $highlight-color-hover-dark;
+	}
+}
+.overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
 // 7. Media queries
