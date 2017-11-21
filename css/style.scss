@@ -129,12 +129,13 @@ a {
 			color: #333;
 			line-height: 0;
 			vertical-align: middle;
+			font-family: Arial, sans-serif;
 		}
 		.slick-prev {
-			left: -35px;
+			left: -45px;
 		}
 		.slick-next {
-			right: -35px;
+			right: -45px;
 		}
 		.slide {
 			// background-image: url(../img/samuel-zeller-15935.jpg);
@@ -148,7 +149,6 @@ a {
 				font-size: 26px;
 			}
 			.product-description {
-				margin-bottom: 25px;
 			}
 			.product-image {
 				min-height: 200px;
@@ -159,6 +159,7 @@ a {
 				text-transform: uppercase;
 				font-weight: 700;
 				font-size: 20px;
+				margin-top: 25px;
 				padding: 4px 50px;
 				color: #fff;
 			}
@@ -166,24 +167,35 @@ a {
 				// background-color: transparentize($base-color, 0.7);
 				border-radius: 10px;
 			}
+			@media (max-width: 768px) {
+				.product-description {
+					display: none;
+				}
+				.product-image {
+					float: none;
+					margin: 25px auto;
+				}
+			}
 		}
 	}
 }
 .contact-links {
 	font-weight: 700;
 	font-size: 18px;
-	margin: 45px 0 20px;
-	i {
-		margin-right: 10px;
-	}
-	.telephone {
-		margin-right: 20px;
+	margin: 65px 0 20px;
+	a {
+		margin: 0 45px 25px 0;
+		display: inline-block;
+		i {
+			margin-right: 10px;
+		}
 	}
 }
 .toggleable-tabs .nav {
 	font-weight: 600;
 	&.nav-pills {
 		border-radius: 4px;
+		margin-bottom: 20px;
 		& > li {
 			margin: 0;
 			& > a {
@@ -213,6 +225,49 @@ a {
 		& > li.active {
 			& > a, & > a:hover, & > a:active {
 				background-color: $base-color;
+			}
+		}
+	}
+}
+.product-grid {
+	.product {
+		margin-bottom: 20px;
+		.product-image {
+			background-color: #fff;
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: auto;
+			padding-top: 100%;
+			border-radius: 5px;
+		}
+		.product-title {
+			font-size: 20px;
+			font-weight: 600;
+		}
+		.product-tag {
+			text-transform: uppercase;
+			border-radius: 10px;
+			background-color: #333;
+			color: #fff;
+			display: inline-block;
+			padding: 0 7px;
+			font-size: 12px;
+			font-weight: 600;
+			margin-right: 5px;
+		}
+		.add-to-cart-button {
+			margin: 5px 0 9px;
+			font-size: 16px;
+			text-transform: uppercase;
+			font-weight: 700;
+			a {
+				border-radius: 10px;
+				padding: 0 10px;
+				color: #fff !important;
+				background-color: $base-color;
+				&:hover, &:active, &:focus {
+					background-color: $base-color-hover-dark;
+				}
 			}
 		}
 	}
