@@ -14,7 +14,8 @@
 		<!-- CSS -->
 			<!-- FontAwesome --> <link rel="stylesheet" href="https://cdn.rawgit.com/FortAwesome/Font-Awesome/945e8bbd/css/font-awesome.min.css">
 			<!-- Bootstrap --> <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-			<!-- Slick --><link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.8.0/slick.css"/>
+			<!-- Slick --><link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/kenwheeler/slick/ee7d37fa/slick/slick.css"/>
+			<!-- Slick theme --><link rel="stylesheet" href="https://cdn.rawgit.com/kenwheeler/slick/ee7d37fa/slick/slick-theme.css">
 		<!-- Js -->
 
 		<!-- Dev -->
@@ -141,15 +142,18 @@
 		<!-- 3rd party -->
 			<!-- jQuery --> <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 			<!-- Bootstrap --> <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-			<!-- Slick --><script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.8.0/slick.min.js"></script>
+			<!-- Slick --><script type="text/javascript" src="https://cdn.rawgit.com/kenwheeler/slick/ee7d37fa/slick/slick.min.js"></script>
 		<!-- Dev -->
 			<script src="js/script.js"></script>
 		<!-- Page specific -->
 			<script>
-				$('.toggleable-tabs a').click(function (e) {
-					e.preventDefault();
-					$(this).tab('show');
-				});
+				$(document).ready(function() {
+					$('.toggleable-tabs a').click(function (e) {
+						e.preventDefault();
+						$(this).tab('show');
+					});
+					$('.featured-products-slider').slick({});
+				})
 			</script>
 
 		<script src="http://localhost:35729/livereload.js"></script>
