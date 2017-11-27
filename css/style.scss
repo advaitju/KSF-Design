@@ -50,11 +50,11 @@ $highlight-color-hover-dark: #c0a31c;
 }
 .navbar-brand {
 	height: auto;
-	width: 220px;
-	padding-top: 25px;
+	width: 200px;
+	padding-top: 15px;
 }
 .navbar-nav > li > a {
-	padding-top: 37px;
+	padding-top: 27px;
 }
 .navbar-toggle {
 	margin-top: 32px;
@@ -114,9 +114,40 @@ a {
 		margin: 0;
 	}
 }
+.location-phones {
+	line-height: 1;
+	text-align: right;
+	.location {
+		display: inline-block;
+		background-color: $base-color;
+		font-size: 18px;
+		padding: 10px 40px;
+		border-radius: 5px;
+		.location-name {
+			font-weight: 600;
+			text-align: left;
+			// text-transform: uppercase;
+			margin-bottom: 0;
+			float: right;
+			color: #fff;
+		}
+		.location-phone {
+			font-weight: 700;
+			color: #fff;
+			margin-top: 5px;
+			display: inline-block;
+		}
+	}
+}
 .value-statement {
 	margin: 25px 0;
+	.static-value-statement {
+		margin: 10px 0;
+	}
 	.animated-value-statement {
+		ul {
+			display: hidden !important;
+		}
 		.word1 {
 			min-width: 200px !important;
 			text-align: center;
@@ -128,15 +159,16 @@ a {
 .coupon-call-to-action {
 	// margin-bottom: 25px;
 	.coupon-wrapper {
-			background: repeating-linear-gradient(
-				45deg,
-				#000,
-				#000 15px,
-				$base-color 15px,
-				$base-color 30px
-			);
-			border-radius: 5px;
-			padding: 15px;
+		background: repeating-linear-gradient(
+			45deg,
+			#000,
+			#000 15px,
+			$base-color 15px,
+			$base-color 30px
+		);
+		border-radius: 5px;
+		padding: 15px;
+		margin-top: 25px;
 		.call-to-action-text {
 			margin: 0;
 			text-shadow: 0 2px #000;
@@ -277,7 +309,7 @@ a {
 		}
 	}
 }
-.product-grid {
+.product-grid, .categories-grid {
 	.product {
 		margin-bottom: 20px;
 		.product-image {
@@ -317,6 +349,20 @@ a {
 					background-color: $base-color-hover-dark;
 				}
 			}
+		}
+	}
+}
+.categories-grid {
+	.product {
+		margin-bottom: 10px;
+		.product-image {
+			background-size: auto 80%;
+			padding-top: 80%;
+			box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 50px 0px;
+		}
+		.product-title {
+			font-weight: 700 !important;
+			margin: 10px 5px 0;
 		}
 	}
 }
