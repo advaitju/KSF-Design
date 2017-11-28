@@ -80,8 +80,8 @@ a {
   .location-phones .location {
     display: inline-block;
     background-color: #005331;
-    font-size: 18px;
-    padding: 10px 40px;
+    font-size: 16px;
+    padding: 10px 35px;
     border-radius: 5px; }
     .location-phones .location .location-name {
       font-weight: 600;
@@ -107,25 +107,27 @@ a {
     font-weight: 600;
     color: #005331; }
 
-.coupon-call-to-action .coupon-wrapper {
-  background: repeating-linear-gradient(45deg, #000, #000 15px, #005331 15px, #005331 30px);
-  border-radius: 5px;
-  padding: 15px;
-  margin-top: 25px; }
-  .coupon-call-to-action .coupon-wrapper .call-to-action-text {
-    margin: 0;
-    text-shadow: 0 2px #000;
-    font-weight: 700 !important;
-    font-size: 26px;
-    text-align: center; }
-    .coupon-call-to-action .coupon-wrapper .call-to-action-text a {
-      color: #fff !important; }
-    .coupon-call-to-action .coupon-wrapper .call-to-action-text .coupon-discount {
-      color: red; }
-    .coupon-call-to-action .coupon-wrapper .call-to-action-text .coupon-timer {
-      color: red; }
-    .coupon-call-to-action .coupon-wrapper .call-to-action-text .coupon-code {
-      color: yellow; }
+.coupon-call-to-action {
+  margin-bottom: 55px; }
+  .coupon-call-to-action .coupon-wrapper {
+    background: repeating-linear-gradient(45deg, #000, #000 15px, #005331 15px, #005331 30px);
+    border-radius: 5px;
+    padding: 15px;
+    margin-top: 25px; }
+    .coupon-call-to-action .coupon-wrapper .call-to-action-text {
+      margin: 0;
+      text-shadow: 0 2px #000;
+      font-weight: 700 !important;
+      font-size: 26px;
+      text-align: center; }
+      .coupon-call-to-action .coupon-wrapper .call-to-action-text a {
+        color: #fff !important; }
+      .coupon-call-to-action .coupon-wrapper .call-to-action-text .coupon-discount {
+        color: red; }
+      .coupon-call-to-action .coupon-wrapper .call-to-action-text .coupon-timer {
+        color: red; }
+      .coupon-call-to-action .coupon-wrapper .call-to-action-text .coupon-code {
+        color: yellow; }
 
 @media (max-width: 768px) {
   .featured-products-slider-wrapper {
@@ -180,7 +182,7 @@ a {
 .contact-links {
   font-weight: 700;
   font-size: 18px;
-  margin: 45px 0 20px; }
+  margin: 0 0 20px; }
   .contact-links a {
     margin: 0 45px 25px 0;
     display: inline-block; }
@@ -217,6 +219,7 @@ a {
     background-repeat: no-repeat;
     background-position: center;
     background-size: auto;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 0 50px 0;
     padding-top: 100%;
     border-radius: 5px; }
   .product-grid .product .product-title, .categories-grid .product .product-title {
@@ -250,10 +253,40 @@ a {
   .categories-grid .product .product-image {
     background-size: auto 80%;
     padding-top: 80%;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 50px 0px; }
+    box-shadow: rgba(0, 0, 0, 0.1) 0 0 50px 0; }
   .categories-grid .product .product-title {
     font-weight: 700 !important;
     margin: 10px 5px 0; }
+
+.call-to-action {
+  margin-top: 45px;
+  margin-bottom: 45px;
+  padding: 25px;
+  background-image: url(../img/construction-site.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative; }
+  .call-to-action p {
+    color: #fff;
+    font-weight: 600;
+    font-size: 18px;
+    margin: 0; }
+  .call-to-action .overlay {
+    background-color: rgba(10, 34, 24, 0.8); }
+  .call-to-action .call-to-action-button {
+    background-color: #efc819;
+    box-shadow: 0 2px 0 0 #806d14;
+    border: 0;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #0a2218;
+    font-size: 20px; }
+    .call-to-action .call-to-action-button:hover, .call-to-action .call-to-action-button:active, .call-to-action .call-to-action-button:focus {
+      background-color: #c0a31c; }
+
+footer {
+  background-color: #005331; }
 
 .highlight-color {
   color: #efc819; }

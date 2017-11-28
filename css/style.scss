@@ -15,6 +15,18 @@ $base-color-hover-dark: #0a2218;
 $highlight-color: #efc819;
 $highlight-color-dark: #806d14;
 $highlight-color-hover-dark: #c0a31c;
+$box-shadow-1: rgba(0, 0, 0, 0.1) 0 0 50px 0;
+
+@mixin button-3d($base-color, $shadow-color, $hover-base-color) {
+	background-color: $base-color;
+	box-shadow: 0 2px 0 0 $shadow-color;
+	border: 0;
+	text-transform: uppercase;
+	font-weight: 700;
+	&:hover, &:active, &:focus {
+		background-color: $hover-base-color;
+	}
+}
 
 // 1. Imports
 @import url('https://fonts.googleapis.com/css?family=Titillium+Web:200,300,300i,400,400i,600,600i,700');
@@ -120,8 +132,8 @@ a {
 	.location {
 		display: inline-block;
 		background-color: $base-color;
-		font-size: 18px;
-		padding: 10px 40px;
+		font-size: 16px;
+		padding: 10px 35px;
 		border-radius: 5px;
 		.location-name {
 			font-weight: 600;
@@ -157,7 +169,7 @@ a {
 	}
 }
 .coupon-call-to-action {
-	// margin-bottom: 25px;
+	margin-bottom: 55px;
 	.coupon-wrapper {
 		background: repeating-linear-gradient(
 			45deg,
@@ -262,7 +274,7 @@ a {
 .contact-links {
 	font-weight: 700;
 	font-size: 18px;
-	margin: 45px 0 20px;
+	margin: 0 0 20px;
 	a {
 		margin: 0 45px 25px 0;
 		display: inline-block;
@@ -317,6 +329,7 @@ a {
 			background-repeat: no-repeat;
 			background-position: center;
 			background-size: auto;
+			box-shadow: $box-shadow-1;
 			padding-top: 100%;
 			border-radius: 5px;
 		}
@@ -358,13 +371,41 @@ a {
 		.product-image {
 			background-size: auto 80%;
 			padding-top: 80%;
-			box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 50px 0px;
+			box-shadow: $box-shadow-1;
 		}
 		.product-title {
 			font-weight: 700 !important;
 			margin: 10px 5px 0;
 		}
 	}
+}
+.call-to-action {
+	margin-top: 45px;
+	margin-bottom: 45px;
+	padding: 25px;
+	background-image: url(../img/construction-site.jpg);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	position: relative;
+	p {
+		color: #fff;
+		font-weight: 600;
+		font-size: 18px;
+		margin: 0;
+	}
+	.overlay {
+		background-color: transparentize($base-color-hover-dark, 0.2);
+	}
+	.call-to-action-button {
+		@include button-3d($highlight-color, $highlight-color-dark, $highlight-color-hover-dark);
+		// color: #fff;
+		color: $base-color-hover-dark;
+		font-size: 20px;
+	}
+}
+footer {
+	background-color: $base-color;
 }
 
 // 5. Page specific sections
