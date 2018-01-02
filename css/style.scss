@@ -276,7 +276,7 @@ a {
 	font-size: 18px;
 	margin: 0 0 20px;
 	a {
-		margin: 0 45px 25px 0;
+		margin: 35px 45px 15px 0;
 		display: inline-block;
 		i {
 			margin-right: 10px;
@@ -406,6 +406,33 @@ a {
 }
 footer {
 	background-color: $base-color;
+	color: #fff;
+	a {
+		color: inherit;
+	}
+	ul {
+		list-style: none;
+		padding: 0;
+		li {
+			margin: 0 0 5px;
+		}
+	}
+	.map {
+		max-width: 250px;
+		height: 250px;
+	}
+	.footer-copyright {
+		background-color: $base-color-hover-dark;
+		padding: 15px 0 15px;
+		.social-media {
+			display: inline;
+			padding: 15px 0;
+		}
+		.copyright {
+			float: right;
+			padding: 15px 0;
+		}
+	}
 }
 
 // 5. Page specific sections

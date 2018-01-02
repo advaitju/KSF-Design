@@ -184,7 +184,7 @@ a {
   font-size: 18px;
   margin: 0 0 20px; }
   .contact-links a {
-    margin: 0 45px 25px 0;
+    margin: 35px 45px 15px 0;
     display: inline-block; }
     .contact-links a i {
       margin-right: 10px; }
@@ -286,7 +286,27 @@ a {
       background-color: #c0a31c; }
 
 footer {
-  background-color: #005331; }
+  background-color: #005331;
+  color: #fff; }
+  footer a {
+    color: inherit; }
+  footer ul {
+    list-style: none;
+    padding: 0; }
+    footer ul li {
+      margin: 0 0 5px; }
+  footer .map {
+    max-width: 250px;
+    height: 250px; }
+  footer .footer-copyright {
+    background-color: #0a2218;
+    padding: 15px 0 15px; }
+    footer .footer-copyright .social-media {
+      display: inline;
+      padding: 15px 0; }
+    footer .footer-copyright .copyright {
+      float: right;
+      padding: 15px 0; }
 
 .highlight-color {
   color: #efc819; }
