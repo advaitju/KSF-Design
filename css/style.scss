@@ -81,7 +81,7 @@ body {
 }
 h1 {
 	font-weight: 200;
-	font-size: 32px;
+	font-size: 28px;
 	margin-bottom: 20px;
 }
 a {
@@ -120,7 +120,7 @@ a {
 	color: #fff;
 	text-align: center;
 	font-weight: 700;
-	font-size: 18px;
+	font-size: 16px;
 	i {
 		margin-left: 5px;
 		margin-right: 5px;
@@ -136,8 +136,8 @@ a {
 	.location {
 		display: inline-block;
 		background-color: $base-color;
-		font-size: 16px;
-		padding: 10px 35px;
+		font-size: 14px;
+		padding: 10px 25px;
 		border-radius: 5px;
 		.location-name {
 			font-weight: 600;
@@ -244,7 +244,7 @@ a {
 			position: relative;
 			.product-title {
 				font-weight: 700;
-				font-size: 26px;
+				font-size: 22px;
 			}
 			.product-description {
 			}
@@ -340,7 +340,7 @@ a {
 			border-radius: 5px;
 		}
 		.product-title {
-			font-size: 20px;
+			font-size: 18px;
 			font-weight: 600;
 		}
 		.product-tag {
@@ -356,7 +356,7 @@ a {
 		}
 		.add-to-cart-button {
 			margin: 5px 0 9px;
-			font-size: 16px;
+			font-size: 14px;
 			text-transform: uppercase;
 			font-weight: 700;
 			a {
@@ -381,7 +381,7 @@ a {
 		}
 		.product-title {
 			font-weight: 700 !important;
-			margin: 10px 5px 0;
+			margin: 10px 5px 10px;
 		}
 	}
 }
