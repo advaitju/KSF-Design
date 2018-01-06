@@ -16,6 +16,7 @@ $highlight-color: #efc819;
 $highlight-color-dark: #806d14;
 $highlight-color-hover-dark: #c0a31c;
 $box-shadow-1: rgba(0, 0, 0, 0.1) 0 0 50px 0;
+$border-radius-default: 5px;
 
 @mixin button-3d($base-color, $shadow-color, $hover-base-color) {
 	background-color: $base-color;
@@ -80,7 +81,6 @@ body {
 	background-repeat: repeat;
 }
 h1 {
-	font-weight: 200;
 	font-size: 28px;
 	margin-bottom: 20px;
 }
@@ -138,7 +138,7 @@ a {
 		background-color: $base-color;
 		font-size: 14px;
 		padding: 10px 25px;
-		border-radius: 5px;
+		border-radius: $border-radius-default;
 		.location-name {
 			font-weight: 600;
 			text-align: left;
@@ -182,7 +182,7 @@ a {
 			$base-color 15px,
 			$base-color 30px
 		);
-		border-radius: 5px;
+		border-radius: $border-radius-default;
 		padding: 15px;
 		margin-top: 25px;
 		.call-to-action-text {
@@ -337,7 +337,7 @@ a {
 			background-size: auto;
 			box-shadow: $box-shadow-1;
 			padding-top: 100%;
-			border-radius: 5px;
+			border-radius: $border-radius-default;
 		}
 		.product-title {
 			font-size: 18px;
@@ -444,7 +444,26 @@ footer {
 	}
 }
 .brochure-download {
-	margin: 20px 0;
+	margin: 15px 0;
+	text-align: right;
+	@media (max-width: 768px) {
+		text-align: left;
+	}
+}
+.breadcrumbs {
+	font-weight: 600;
+}
+.product-list {
+	margin-top: 20px;
+	.product-list-head {
+		background-color: $base-color;
+		color: #fff;
+		border-radius: $border-radius-default;
+		padding: 10px 0;
+		text-transform: uppercase;
+		font-weight: 600;
+		font-size: 16px;
+	}
 }
 
 // 5. Page specific sections
