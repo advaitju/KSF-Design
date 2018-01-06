@@ -57,6 +57,8 @@ input {
   border-radius: 5px;
   background-color: transparent;
   border: 1px solid #999; }
+  input:focus, input:active {
+    outline: 0; }
 
 .page-wrapper {
   max-width: 100vw; }
@@ -273,7 +275,9 @@ input {
     .product-list-desktop-tablet table > tbody > tr > td.quantity {
       width: 25%; }
       .product-list-desktop-tablet table > tbody > tr > td.quantity input {
-        width: 100%; }
+        width: 100%;
+        max-width: 70px;
+        text-align: center; }
   .product-list-desktop-tablet .product {
     margin-top: 20px; }
   .product-list-desktop-tablet .product-list-head {

@@ -17,6 +17,9 @@ $highlight-color-dark: #806d14;
 $highlight-color-hover-dark: #c0a31c;
 $box-shadow-1: rgba(0, 0, 0, 0.1) 0 0 50px 0;
 $border-radius-default: 5px;
+$gray-1: #333;
+$gray-2: #666;
+$gray-3: #999;
 
 @mixin button-3d($base-color, $shadow-color, $hover-base-color) {
 	background-color: $base-color;
@@ -100,7 +103,10 @@ a {
 input {
 	border-radius: $border-radius-default;
 	background-color: transparent;
-	border: 1px solid #999;
+	border: 1px solid $gray-3;
+	&:focus, &:active {
+		outline: 0;
+	}
 }
 
 // 4. Blocks: BEM, OOCSS, DRY CSS
@@ -395,6 +401,8 @@ input {
 			width: 25%;
 			input {
 				width: 100%;
+				max-width: 70px;
+				text-align: center;
 			}
 		}
 	}
