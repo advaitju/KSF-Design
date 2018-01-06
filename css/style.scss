@@ -21,6 +21,7 @@ $gray-1: #333;
 $gray-2: #666;
 $gray-3: #999;
 $gray-4: #ccc;
+$gray-5: #eee;
 
 @mixin button-3d($base-color, $shadow-color, $hover-base-color) {
 	background-color: $base-color;
@@ -45,7 +46,7 @@ $gray-4: #ccc;
 	font-weight: 700;
 	font-size: 16px;
 	& .navbar-nav > li > a {
-		color: #333 !important;
+		color: $gray-1 !important;
 	}
 	& .navbar-nav > li.active > a {
 		@media (min-width: 768px) {
@@ -79,7 +80,7 @@ $gray-4: #ccc;
 
 // 3. Site-wide / HTML elements
 body {
-	color: #333;
+	color: $gray-1;
 	font-family: "Titillium Web", sans-serif;
 	background-image: url(../img/concrete-texture.png);
 	background-repeat: repeat;
@@ -236,7 +237,7 @@ input {
 		}
 		.slick-prev:before, .slick-next:before {
 			font-size: 70px;
-			color: #333;
+			color: $gray-1;
 			line-height: 0;
 			vertical-align: middle;
 			font-family: Arial, sans-serif;
@@ -360,27 +361,30 @@ input {
 		.product-tag {
 			text-transform: uppercase;
 			border-radius: 10px;
-			background-color: #333;
+			background-color: $gray-1;
 			color: #fff;
 			display: inline-block;
 			padding: 0 7px;
 			font-size: 12px;
 			font-weight: 600;
 			margin-right: 5px;
+			&:hover, &:focus, &:active {
+				color: $gray-5;
+				background-color: #000;
+			}
 		}
 		.add-to-cart-button {
-			margin: 5px 0 9px;
+			display: inline-block;
+			margin: 5px 0 6px;
 			font-size: 14px;
 			text-transform: uppercase;
 			font-weight: 700;
-			a {
-				border-radius: 10px;
-				padding: 0 10px;
-				color: #fff !important;
-				background-color: $base-color;
-				&:hover, &:active, &:focus {
-					background-color: $base-color-hover-dark;
-				}
+			border-radius: 10px;
+			padding: 0 10px;
+			color: #fff !important;
+			background-color: $base-color;
+			&:hover, &:active, &:focus {
+				background-color: $base-color-hover-dark;
 			}
 		}
 	}
