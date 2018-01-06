@@ -97,6 +97,11 @@ a {
 		}
 	}
 }
+input {
+	border-radius: $border-radius-default;
+	background-color: transparent;
+	border: 1px solid #999;
+}
 
 // 4. Blocks: BEM, OOCSS, DRY CSS
 // 5. Page specific sections
@@ -327,22 +332,24 @@ a {
 		}
 	}
 }
+.product-grid, .categories-grid, .product-list-desktop-tablet {
+	.product-image {
+		background-color: #fff;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: auto;
+		box-shadow: $box-shadow-1;
+		padding-top: 100%;
+		border-radius: $border-radius-default;
+	}
+	.product-title {
+		font-size: 18px;
+		font-weight: 600;
+	}
+}
 .product-grid, .categories-grid {
 	.product {
 		margin-bottom: 20px;
-		.product-image {
-			background-color: #fff;
-			background-repeat: no-repeat;
-			background-position: center;
-			background-size: auto;
-			box-shadow: $box-shadow-1;
-			padding-top: 100%;
-			border-radius: $border-radius-default;
-		}
-		.product-title {
-			font-size: 18px;
-			font-weight: 600;
-		}
 		.product-tag {
 			text-transform: uppercase;
 			border-radius: 10px;
@@ -369,6 +376,39 @@ a {
 				}
 			}
 		}
+	}
+}
+.product-list-desktop-tablet {
+	margin-top: 20px;
+	.product-details-input {
+		margin-bottom: 10px;
+	}
+	table {
+		width: 100%;
+		& > tbody > tr > td.size {
+			width: 40%;
+		}
+		& > tbody > tr > td.weight {
+			width: 35%;
+		}
+		& > tbody > tr > td.quantity {
+			width: 25%;
+			input {
+				width: 100%;
+			}
+		}
+	}
+	.product {
+		margin-top: 20px;
+	}
+	.product-list-head {
+		background-color: $base-color;
+		color: #fff;
+		border-radius: $border-radius-default;
+		padding: 10px 0;
+		text-transform: uppercase;
+		font-weight: 600;
+		font-size: 16px;
 	}
 }
 .categories-grid {
@@ -452,18 +492,6 @@ footer {
 }
 .breadcrumbs {
 	font-weight: 600;
-}
-.product-list {
-	margin-top: 20px;
-	.product-list-head {
-		background-color: $base-color;
-		color: #fff;
-		border-radius: $border-radius-default;
-		padding: 10px 0;
-		text-transform: uppercase;
-		font-weight: 600;
-		font-size: 16px;
-	}
 }
 
 // 5. Page specific sections
