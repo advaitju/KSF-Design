@@ -293,12 +293,15 @@ input {
 .contact-links {
 	font-weight: 700;
 	font-size: 18px;
-	margin: 0 0 20px;
+	margin: 25px 0 20px;
 	a {
-		margin: 35px 45px 15px 0;
+		margin: 0 45px 15px 0;
 		display: inline-block;
 		i {
 			margin-right: 10px;
+		}
+		&:last-child {
+			margin: 0;
 		}
 	}
 }
