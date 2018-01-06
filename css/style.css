@@ -354,11 +354,10 @@ footer {
       padding: 15px 0; }
 
 .brochure-download {
-  margin: 15px 0;
-  text-align: right; }
-  @media (max-width: 768px) {
+  margin: 15px 0; }
+  @media (min-width: 768px) {
     .brochure-download {
-      text-align: left; } }
+      float: right; } }
 
 .breadcrumbs {
   font-weight: 600; }
