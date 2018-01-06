@@ -319,13 +319,20 @@ footer {
       float: right;
       padding: 15px 0; }
 
+.brochure-download {
+  margin: 20px 0; }
+
 .highlight-color {
   color: #efc819; }
 
 .highlighted-button {
   background-color: #efc819;
   box-shadow: 0 2px 0 0 #806d14;
-  border: 0; }
+  border: 0;
+  color: #fff !important;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 16px; }
   .highlighted-button:hover, .highlighted-button:active, .highlighted-button:focus {
     background-color: #c0a31c; }
 
@@ -335,9 +342,6 @@ footer {
   left: 0;
   width: 100%;
   height: 100%; }
-
-.full-width {
-  width: 100%; }
 
 @keyframes flashing-banner {
   0% {
