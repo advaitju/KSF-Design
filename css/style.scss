@@ -119,6 +119,15 @@ input {
 // 5. Page specific sections
 // 6. Helper CSS style applicators
 // 7. Media queries
+.shopping-cart-bubble {
+	position: fixed;
+	right: 5%;
+	bottom: 5%;
+	z-index: 100;
+	.fa-circle {
+		text-shadow: 0 0 60px rgba(0, 0, 0, 0.7);
+	}
+}
 .page-wrapper {
 	max-width: 100vw;
 }
