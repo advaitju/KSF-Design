@@ -45,6 +45,7 @@ $gray-5: #eee;
 	font-family: "Titillium Web";
 	font-weight: 700;
 	font-size: 16px;
+	margin-bottom: 15px;
 	& .navbar-nav > li > a {
 		color: $gray-1 !important;
 	}
@@ -73,9 +74,12 @@ $gray-5: #eee;
 }
 .navbar-nav > li > a {
 	padding-top: 27px;
+	@media (max-width: 768px) {
+		padding-top: 10px;
+	}
 }
 .navbar-toggle {
-	margin-top: 32px;
+	margin-top: 26px;
 }
 
 // 3. Site-wide / HTML elements
@@ -124,12 +128,10 @@ input {
 .site-wide-banner {
 	animation-name: flashing-banner;
 	animation-duration: 1s;
-	// animation-delay: 1s;
 	animation-iteration-count: infinite;
 	animation-timing-function: linear;
 	animation-direction: alternate;
-	// background-color: $base-color;
-	padding: 10px;
+	padding: 5px;
 	color: #fff;
 	text-align: center;
 	font-weight: 700;
@@ -145,7 +147,7 @@ input {
 .location-phones {
 	line-height: 1;
 	text-align: right;
-	margin-bottom: 25px;
+	margin-bottom: 15px;
 	.location {
 		display: inline-block;
 		background-color: $base-color;
@@ -169,7 +171,7 @@ input {
 	}
 }
 .value-statement {
-	margin: 0 0 25px;
+	margin: 0 0 15px;
 	.static-value-statement {
 		margin: 10px 0;
 	}
@@ -343,19 +345,40 @@ input {
 		}
 	}
 }
-.product-grid, .categories-grid, .product-list {
+.add-to-cart-button {
+	display: inline-block;
+	margin: 5px 0 6px;
+	font-size: 14px;
+	text-transform: uppercase;
+	font-weight: 700;
+	border-radius: 10px;
+	padding: 0 10px;
+	color: #fff !important;
+	background-color: $base-color;
+	&:hover, &:active, &:focus {
+		background-color: $base-color-hover-dark;
+	}
+}
+.product {
 	.product-image {
 		background-color: #fff;
 		background-repeat: no-repeat;
 		background-position: center;
-		background-size: auto;
+		background-size: auto 80%;
 		box-shadow: $box-shadow-1;
-		padding-top: 100%;
+		padding-top: 75%;
 		border-radius: $border-radius-default;
 	}
 	.product-title {
 		font-size: 18px;
 		font-weight: 600;
+	}
+	&.modal {
+		.modal-header {
+			.product-title {
+				margin: 0;
+			}
+		}
 	}
 }
 .product-grid, .categories-grid {
@@ -376,45 +399,26 @@ input {
 				background-color: #000;
 			}
 		}
-		.add-to-cart-button {
-			display: inline-block;
-			margin: 5px 0 6px;
-			font-size: 14px;
-			text-transform: uppercase;
-			font-weight: 700;
-			border-radius: 10px;
-			padding: 0 10px;
-			color: #fff !important;
-			background-color: $base-color;
-			&:hover, &:active, &:focus {
-				background-color: $base-color-hover-dark;
-			}
-		}
 	}
 }
-.product-list {
-	margin-top: 20px;
-	.product-details-input-head {
-		margin-top: 20px;
-		table {
-			text-transform: uppercase;
-			font-weight: 600;
-		}
-	}
-	.product-details-input {
-		margin-top: 10px;
-		margin-bottom: 10px;
-	}
+.product-details {
 	table {
 		width: 100%;
+		& > tbody > tr > td {
+			padding-right: 5px;
+			vertical-align: top;
+		}
+		& > tbody > tr > td.code {
+			width: 20%;
+		}
 		& > tbody > tr > td.size {
-			width: 40%;
+			width: 30%;
 		}
 		& > tbody > tr > td.weight {
-			width: 35%;
+			width: 30%;
 		}
 		& > tbody > tr > td.quantity {
-			width: 25%;
+			width: 20%;
 			input {
 				width: 100%;
 				max-width: 70px;
@@ -422,6 +426,20 @@ input {
 			}
 		}
 	}
+	&.product-details-input {
+		margin-top: 10px;
+		margin-bottom: 10px;
+		&.product-details-input-head {
+			margin-top: 20px;
+			table {
+				text-transform: uppercase;
+				font-weight: 600;
+			}
+		}
+	}
+}
+.product-list {
+	margin-top: 20px;
 	.product {
 		margin-top: 20px;
 		margin-bottom: 10px;
@@ -442,11 +460,6 @@ input {
 .categories-grid {
 	.product {
 		margin-bottom: 10px;
-		.product-image {
-			background-size: auto 80%;
-			padding-top: 80%;
-			box-shadow: $box-shadow-1;
-		}
 		.product-title {
 			font-weight: 700 !important;
 			margin: 10px 5px 10px;
