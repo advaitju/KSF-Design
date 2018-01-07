@@ -16,6 +16,12 @@ $highlight-color: #efc819;
 $highlight-color-dark: #806d14;
 $highlight-color-hover-dark: #c0a31c;
 $box-shadow-1: rgba(0, 0, 0, 0.1) 0 0 50px 0;
+$border-radius-default: 5px;
+$gray-1: #333;
+$gray-2: #666;
+$gray-3: #999;
+$gray-4: #ccc;
+$gray-5: #eee;
 
 @mixin button-3d($base-color, $shadow-color, $hover-base-color) {
 	background-color: $base-color;
@@ -39,8 +45,9 @@ $box-shadow-1: rgba(0, 0, 0, 0.1) 0 0 50px 0;
 	font-family: "Titillium Web";
 	font-weight: 700;
 	font-size: 16px;
+	margin-bottom: 15px;
 	& .navbar-nav > li > a {
-		color: #333 !important;
+		color: $gray-1 !important;
 	}
 	& .navbar-nav > li.active > a {
 		@media (min-width: 768px) {
@@ -67,21 +74,23 @@ $box-shadow-1: rgba(0, 0, 0, 0.1) 0 0 50px 0;
 }
 .navbar-nav > li > a {
 	padding-top: 27px;
+	@media (max-width: 768px) {
+		padding-top: 10px;
+	}
 }
 .navbar-toggle {
-	margin-top: 32px;
+	margin-top: 26px;
 }
 
 // 3. Site-wide / HTML elements
 body {
-	color: #333;
+	color: $gray-1;
 	font-family: "Titillium Web", sans-serif;
 	background-image: url(../img/concrete-texture.png);
 	background-repeat: repeat;
 }
 h1 {
-	font-weight: 200;
-	font-size: 32px;
+	font-size: 28px;
 	margin-bottom: 20px;
 }
 a {
@@ -97,27 +106,45 @@ a {
 		}
 	}
 }
+input {
+	border-radius: $border-radius-default;
+	background-color: transparent;
+	border: 1px solid $gray-3;
+	&:focus, &:active {
+		outline: 0;
+	}
+}
 
 // 4. Blocks: BEM, OOCSS, DRY CSS
 // 5. Page specific sections
 // 6. Helper CSS style applicators
 // 7. Media queries
+.shopping-cart-bubble {
+	position: fixed;
+	right: 5%;
+	bottom: 5%;
+	z-index: 100;
+	.fa-circle {
+		text-shadow: 0 0 60px rgba(0, 0, 0, 0.7);
+	}
+}
+.page-wrapper {
+	max-width: 100vw;
+}
 .nav-logo {
 	max-width: 100%;
 }
 .site-wide-banner {
 	animation-name: flashing-banner;
 	animation-duration: 1s;
-	// animation-delay: 1s;
 	animation-iteration-count: infinite;
 	animation-timing-function: linear;
 	animation-direction: alternate;
-	// background-color: $base-color;
-	padding: 10px;
+	padding: 5px;
 	color: #fff;
 	text-align: center;
 	font-weight: 700;
-	font-size: 18px;
+	font-size: 16px;
 	i {
 		margin-left: 5px;
 		margin-right: 5px;
@@ -129,12 +156,13 @@ a {
 .location-phones {
 	line-height: 1;
 	text-align: right;
+	margin-bottom: 15px;
 	.location {
 		display: inline-block;
 		background-color: $base-color;
-		font-size: 16px;
-		padding: 10px 35px;
-		border-radius: 5px;
+		font-size: 14px;
+		padding: 10px 25px;
+		border-radius: $border-radius-default;
 		.location-name {
 			font-weight: 600;
 			text-align: left;
@@ -152,7 +180,7 @@ a {
 	}
 }
 .value-statement {
-	margin: 25px 0;
+	margin: 0 0 15px;
 	.static-value-statement {
 		margin: 10px 0;
 	}
@@ -178,7 +206,7 @@ a {
 			$base-color 15px,
 			$base-color 30px
 		);
-		border-radius: 5px;
+		border-radius: $border-radius-default;
 		padding: 15px;
 		margin-top: 25px;
 		.call-to-action-text {
@@ -203,8 +231,10 @@ a {
 	}
 }
 .featured-products-slider-wrapper {
+	max-width: 85%;
+	margin: 0 auto;
 	@media (max-width: 768px) {
-		max-width: 85%;
+		max-width: 80%;
 		margin: 0 auto;
 	}
 	.featured-products-slider {
@@ -218,7 +248,7 @@ a {
 		}
 		.slick-prev:before, .slick-next:before {
 			font-size: 70px;
-			color: #333;
+			color: $gray-1;
 			line-height: 0;
 			vertical-align: middle;
 			font-family: Arial, sans-serif;
@@ -238,7 +268,7 @@ a {
 			position: relative;
 			.product-title {
 				font-weight: 700;
-				font-size: 26px;
+				font-size: 22px;
 			}
 			.product-description {
 			}
@@ -274,12 +304,15 @@ a {
 .contact-links {
 	font-weight: 700;
 	font-size: 18px;
-	margin: 0 0 20px;
+	margin: 25px 0 20px;
 	a {
-		margin: 0 45px 25px 0;
+		margin: 0 45px 15px 0;
 		display: inline-block;
 		i {
 			margin-right: 10px;
+		}
+		&:last-child {
+			margin: 0;
 		}
 	}
 }
@@ -321,68 +354,137 @@ a {
 		}
 	}
 }
+.add-to-cart-button {
+	display: inline-block;
+	margin: 5px 0 6px;
+	font-size: 14px;
+	text-transform: uppercase;
+	font-weight: 700;
+	border-radius: 10px;
+	padding: 0 10px;
+	color: #fff !important;
+	background-color: $base-color;
+	&:hover, &:active, &:focus {
+		background-color: $base-color-hover-dark;
+	}
+}
+.product {
+	.product-image {
+		background-color: #fff;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: auto 80%;
+		box-shadow: $box-shadow-1;
+		padding-top: 75%;
+		border-radius: $border-radius-default;
+	}
+	.product-title {
+		font-size: 18px;
+		font-weight: 600;
+	}
+	&.modal {
+		.modal-header {
+			.product-title {
+				margin: 0;
+			}
+		}
+		.modal-footer {
+			.close-modal {
+				text-transform: uppercase;
+				font-weight: 700;
+			}
+		}
+	}
+}
 .product-grid, .categories-grid {
 	.product {
 		margin-bottom: 20px;
-		.product-image {
-			background-color: #fff;
-			background-repeat: no-repeat;
-			background-position: center;
-			background-size: auto;
-			box-shadow: $box-shadow-1;
-			padding-top: 100%;
-			border-radius: 5px;
-		}
-		.product-title {
-			font-size: 20px;
-			font-weight: 600;
-		}
 		.product-tag {
 			text-transform: uppercase;
 			border-radius: 10px;
-			background-color: #333;
+			background-color: $gray-1;
 			color: #fff;
 			display: inline-block;
 			padding: 0 7px;
 			font-size: 12px;
 			font-weight: 600;
 			margin-right: 5px;
-		}
-		.add-to-cart-button {
-			margin: 5px 0 9px;
-			font-size: 16px;
-			text-transform: uppercase;
-			font-weight: 700;
-			a {
-				border-radius: 10px;
-				padding: 0 10px;
-				color: #fff !important;
-				background-color: $base-color;
-				&:hover, &:active, &:focus {
-					background-color: $base-color-hover-dark;
-				}
+			&:hover, &:focus, &:active {
+				color: $gray-5;
+				background-color: #000;
 			}
 		}
+	}
+}
+.product-details {
+	table {
+		width: 100%;
+		& > tbody > tr > td {
+			padding-right: 5px;
+			vertical-align: top;
+		}
+		& > tbody > tr > td.code {
+			width: 20%;
+		}
+		& > tbody > tr > td.size {
+			width: 30%;
+		}
+		& > tbody > tr > td.weight {
+			width: 30%;
+		}
+		& > tbody > tr > td.quantity {
+			width: 20%;
+			input {
+				width: 100%;
+				max-width: 70px;
+				text-align: center;
+			}
+		}
+	}
+	&.product-details-input {
+		margin-top: 10px;
+		margin-bottom: 10px;
+		&.product-details-input-head {
+			margin-top: 20px;
+			table {
+				text-transform: uppercase;
+				font-weight: 600;
+			}
+		}
+	}
+}
+.product-list {
+	margin-top: 20px;
+	.product {
+		margin-top: 20px;
+		margin-bottom: 10px;
+		border-bottom: 1px solid $gray-4;
+		padding-bottom: 20px;
+	}
+	.product-list-head {
+		background-color: $base-color;
+		color: #fff;
+		border-radius: $border-radius-default;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		text-transform: uppercase;
+		font-weight: 600;
+		font-size: 16px;
 	}
 }
 .categories-grid {
 	.product {
 		margin-bottom: 10px;
-		.product-image {
-			background-size: auto 80%;
-			padding-top: 80%;
-			box-shadow: $box-shadow-1;
-		}
 		.product-title {
 			font-weight: 700 !important;
-			margin: 10px 5px 0;
+			margin: 10px 5px 10px;
 		}
 	}
 }
 .call-to-action {
 	margin-top: 45px;
 	margin-bottom: 45px;
-	padding: 25px;
+	padding: 30px 0;
 	background-image: url(../img/construction-site.jpg);
 	background-size: cover;
 	background-position: center;
@@ -399,13 +501,52 @@ a {
 	}
 	.call-to-action-button {
 		@include button-3d($highlight-color, $highlight-color-dark, $highlight-color-hover-dark);
-		// color: #fff;
 		color: $base-color-hover-dark;
 		font-size: 20px;
+		margin-top: 10px;
+		@media (max-width: 768px) {
+			margin-top: 25px;
+		}
 	}
 }
 footer {
 	background-color: $base-color;
+	color: #fff;
+	a {
+		color: inherit;
+	}
+	ul {
+		list-style: none;
+		padding: 0;
+		li {
+			margin: 0 0 5px;
+		}
+	}
+	.map {
+		max-width: 250px;
+		height: 250px;
+	}
+	.footer-copyright {
+		background-color: $base-color-hover-dark;
+		padding: 20px 0 10px;
+		.social-media {
+			display: inline;
+			padding: 15px 0;
+		}
+		.copyright {
+			float: right;
+			padding: 15px 0;
+		}
+	}
+}
+.brochure-download {
+	margin: 15px 0;
+	@media (min-width: 768px) {
+		float: right;
+	}
+}
+.breadcrumbs {
+	font-weight: 600;
 }
 
 // 5. Page specific sections
@@ -418,6 +559,10 @@ footer {
 	background-color: $highlight-color;
 	box-shadow: 0 2px 0 0 $highlight-color-dark;
 	border: 0;
+	color: #fff !important;
+	text-transform: uppercase;
+	font-weight: 700;
+	font-size: 16px;
 	&:hover, &:active, &:focus {
 		background-color: $highlight-color-hover-dark;
 	}
