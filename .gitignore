@@ -1,6 +1,6 @@
-.sass-cache/**
-css/.sass-cache/**
-css/style.css.map
+design/.sass-cache/**
+design/css/.sass-cache/**
+design/css/style.css.map
 
 # Wordpress
 wp-config.php
