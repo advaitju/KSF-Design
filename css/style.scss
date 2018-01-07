@@ -379,6 +379,12 @@ input {
 				margin: 0;
 			}
 		}
+		.modal-footer {
+			.close-modal {
+				text-transform: uppercase;
+				font-weight: 700;
+			}
+		}
 	}
 }
 .product-grid, .categories-grid {

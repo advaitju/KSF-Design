@@ -257,6 +257,9 @@ input {
   font-weight: 600; }
 .product.modal .modal-header .product-title {
   margin: 0; }
+.product.modal .modal-footer .close-modal {
+  text-transform: uppercase;
+  font-weight: 700; }
 
 .product-grid .product, .categories-grid .product {
   margin-bottom: 20px; }
